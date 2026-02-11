@@ -436,7 +436,10 @@ function copyResults() {
                 n => participantNumbers[n] === pair.to
             );
             return `${pair.from} дарит 🎁 ${nameToDative(partnerName)}`;
-        }).join('\n');
+        }).join('\n')+ '\n\n' +
+        '✨ Сделано с 💖 в "Тайном Санте"\n' +
+        '🌐 https://emitterlight.github.io/secretsanta/\n' +
+        `📅 ${new Date().toLocaleDateString('ru-RU')}\n\n`;
 
     navigator.clipboard.writeText(text).then(() => {
         showNotification('Результаты скопированы!', 'success');
@@ -456,13 +459,16 @@ function saveToFile() {
             return `${pair.from} дарит 🎁 ${nameToDative(partnerName)}`;
         }).join('\n') + '\n\n' +
         '═'.repeat(40) + '\n' +
-        'Сделано с 💖' + '\n\n';
+        '✨ Сделано с 💖 в "Тайном Санте"\n' +
+        '🌐 Сайт: https://emitterlight.github.io/secretsanta/\n' +
+        '📦 Код:  https://github.com/emitterlight/secretsanta\n' +
+        `📅 ${new Date().toLocaleDateString('ru-RU')}\n\n`;
 
     const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `tajnaya-cetkin-${new Date().toISOString().split('T')[0]}.txt`;
+    a.download = `tajnyy-santa-${new Date().toISOString().split('T')[0]}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
