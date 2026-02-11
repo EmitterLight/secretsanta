@@ -31,9 +31,9 @@
    cd secretsanta
    ```
 
-2. Откройте `secretsanta.html` в браузере:
+2. Откройте `index.html` в браузере:
    - **Windows**: двойной клик по файлу
-   - **macOS/Linux**: `open secretsanta.html` или `xdg-open secretsanta.html`
+   - **macOS/Linux**: `open index.html` или `xdg-open index.html`
 
 3. Готово! Приложение работает полностью в браузере, сервер не требуется.
 
